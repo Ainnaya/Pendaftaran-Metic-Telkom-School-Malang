@@ -80,9 +80,12 @@
 
     <Button
         android:id="@+id/buttonDaftar"
+        style="@style/Base.TextAppearance.AppCompat.Title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Daftar" />
+        android:background="@drawable/bgbtn"
+        android:text="Daftar"
+        android:textColor="@android:color/white" />
 
     <TextView
         android:id="@+id/textViewHasil"
