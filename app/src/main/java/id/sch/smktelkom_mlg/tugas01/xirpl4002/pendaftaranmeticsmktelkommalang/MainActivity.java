@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
         if (isValid()) {
             String userid = etUserID.getText().toString();
             String email = etEmail.getText().toString();
-            int tahun = Integer.parseInt(etHP.getText().toString());
+            int HP = Integer.parseInt(etHP.getText().toString());
             tvHasil.setText(userid + " EMAIL: " + email + " NO. HP: ");
         }
     }
@@ -44,8 +44,39 @@ public class MainActivity extends AppCompatActivity {
     private boolean isValid() {
         boolean valid = true;
         String userid = etUserID.getText().toString();
+        String email = etEmail.getText().toString();
         String HP = etHP.getText().toString();
 
-        if ()
+        if (userid.isEmpty()) {
+            etUserID.setError("USER ID belum diisi");
+            valid = false;
+        } else if (userid.length() < 4) {
+            etUserID.setError("USER ID minimal 4 karakter");
+            valid = false;
+        } else {
+            etUserID.setError(null);
+        }
+
+        if (email.isEmpty()) {
+            etEmail.setError("EMAIL belum diisi");
+            valid = false;
+        } else if (email.length() < 8) {
+            etEmail.setError("Email minimal 8 karakter");
+            valid = false;
+        } else {
+            etEmail.setError(null);
+        }
+
+        if (HP.isEmpty()) {
+            etHP.setError("NOMOR HP belum diisi");
+            valid = false;
+        } else if (HP.length() < 11) {
+            etHP.setError("NOMOR HP minimal 11 karakter");
+            valid = false;
+        } else {
+            etHP.setError(null);
+        }
+
+        return valid;
     }
 }
