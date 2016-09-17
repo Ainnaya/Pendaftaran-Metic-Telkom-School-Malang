@@ -5,12 +5,14 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RadioButton;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
     EditText etUserID;
     EditText etEmail;
     EditText etHP;
+    RadioButton rbLK, rbPR;
     Button bDaftar;
     TextView tvHasil;
 
@@ -22,6 +24,8 @@ public class MainActivity extends AppCompatActivity {
         etUserID = (EditText) findViewById(R.id.editTextUserID);
         etEmail = (EditText) findViewById(R.id.editTextEmail);
         etHP = (EditText) findViewById(R.id.editTextHP);
+        rbLK = (RadioButton) findViewById(R.id.radioButtonLK);
+        rbPR = (RadioButton) findViewById(R.id.radioButtonPR);
         bDaftar = (Button) findViewById(R.id.buttonDaftar);
         tvHasil = (TextView) findViewById(R.id.textViewHasil);
         bDaftar.setOnClickListener(new View.OnClickListener() {
@@ -30,6 +34,27 @@ public class MainActivity extends AppCompatActivity {
                 doProcess();
             }
         });
+        findViewById(R.id.buttonDaftar).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                doClick();
+            }
+        });
+    }
+
+    private void doClick() {
+        String hasil = null;
+        if (rbLK.isChecked()) {
+            hasil = rbLK.getText().toString();
+        } else if (rbPR.isChecked()) {
+            hasil = rbPR.getText().toString();
+        }
+
+        if (hasil == null) {
+            tvHasil.setText("Anda belum memilih GENDER");
+        } else {
+            tvHasil.setText("GENDER anda: " + hasil);
+        }
     }
 
     private void doProcess() {
@@ -45,7 +70,7 @@ public class MainActivity extends AppCompatActivity {
         boolean valid = true;
         String userid = etUserID.getText().toString();
         String email = etEmail.getText().toString();
-        String HP = etHP.getText().toString();
+        int HP = Integer.parseInt(etHP.getText().toString());
 
         if (userid.isEmpty()) {
             etUserID.setError("USER ID belum diisi");
