@@ -4,8 +4,10 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.RadioButton;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
@@ -13,8 +15,10 @@ public class MainActivity extends AppCompatActivity {
     EditText etEmail;
     EditText etHP;
     RadioButton rbLK, rbPR;
+    Spinner spJurusan;
+    CheckBox cbPG, cbSG, cbSR;
     Button bDaftar;
-    TextView tvHasil;
+    TextView tvHasil1, tvHasil2, tvHasil3, tvHasil4, tvHasil5, tvHasil6;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,82 +30,61 @@ public class MainActivity extends AppCompatActivity {
         etHP = (EditText) findViewById(R.id.editTextHP);
         rbLK = (RadioButton) findViewById(R.id.radioButtonLK);
         rbPR = (RadioButton) findViewById(R.id.radioButtonPR);
+        spJurusan = (Spinner) findViewById(R.id.spinnerJurusan);
+        cbPG = (CheckBox) findViewById(R.id.checkBoxPG);
+        cbSG = (CheckBox) findViewById(R.id.checkBoxSG);
+        cbSR = (CheckBox) findViewById(R.id.checkBoxSR);
         bDaftar = (Button) findViewById(R.id.buttonDaftar);
-        tvHasil = (TextView) findViewById(R.id.textViewHasil);
-        bDaftar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                doProcess();
-            }
-        });
+        tvHasil1 = (TextView) findViewById(R.id.textViewHasil1);
+        tvHasil2 = (TextView) findViewById(R.id.textViewHasil2);
+        tvHasil3 = (TextView) findViewById(R.id.textViewHasil3);
+        tvHasil4 = (TextView) findViewById(R.id.textViewHasil4);
+        tvHasil5 = (TextView) findViewById(R.id.textViewHasil5);
+        tvHasil6 = (TextView) findViewById(R.id.textViewHasil6);
         findViewById(R.id.buttonDaftar).setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
+            public void onClick(View view)
+
+            {
                 doClick();
             }
         });
     }
 
     private void doClick() {
-        String hasil = null;
-        if (rbLK.isChecked()) {
-            hasil = rbLK.getText().toString();
-        } else if (rbPR.isChecked()) {
-            hasil = rbPR.getText().toString();
-        }
-
-        if (hasil == null) {
-            tvHasil.setText("Anda belum memilih GENDER");
-        } else {
-            tvHasil.setText("GENDER anda: " + hasil);
-        }
-    }
-
-    private void doProcess() {
-        if (isValid()) {
-            String userid = etUserID.getText().toString();
-            String email = etEmail.getText().toString();
-            int HP = Integer.parseInt(etHP.getText().toString());
-            tvHasil.setText(userid + " EMAIL: " + email + " NO. HP: ");
-        }
-    }
-
-    private boolean isValid() {
-        boolean valid = true;
         String userid = etUserID.getText().toString();
+        tvHasil1.setText("USER ID: " + userid);
+
         String email = etEmail.getText().toString();
+        tvHasil2.setText("EMAIL: " + email);
+
         int HP = Integer.parseInt(etHP.getText().toString());
+        tvHasil3.setText("NOMOR HP: " + HP);
 
-        if (userid.isEmpty()) {
-            etUserID.setError("USER ID belum diisi");
-            valid = false;
-        } else if (userid.length() < 4) {
-            etUserID.setError("USER ID minimal 4 karakter");
-            valid = false;
+        String gender = null;
+        if (rbLK.isChecked()) {
+            gender = rbLK.getText().toString();
+        } else if (rbPR.isChecked()) {
+            gender = rbPR.getText().toString();
+        }
+        if (gender == null) {
+            tvHasil4.setText("Anda belum memilih GENDER");
         } else {
-            etUserID.setError(null);
+            tvHasil4.setText("GENDER anda: " + gender);
         }
 
-        if (email.isEmpty()) {
-            etEmail.setError("EMAIL belum diisi");
-            valid = false;
-        } else if (email.length() < 8) {
-            etEmail.setError("Email minimal 8 karakter");
-            valid = false;
-        } else {
-            etEmail.setError(null);
-        }
+        tvHasil5.setText("JURUSAN yang dipilih: " + spJurusan.getSelectedItem().toString());
 
-        if (HP.isEmpty()) {
-            etHP.setError("NOMOR HP belum diisi");
-            valid = false;
-        } else if (HP.length() < 11) {
-            etHP.setError("NOMOR HP minimal 11 karakter");
-            valid = false;
-        } else {
-            etHP.setError(null);
-        }
+        String kelas = "KELAS dimulai:\n";
+        int startlen = kelas.length();
+        if (cbPG.isChecked()) kelas += cbPG.getText() + "\n";
+        if (cbSG.isChecked()) kelas += cbSG.getText() + "\n";
+        if (cbSR.isChecked()) kelas += cbSR.getText() + "\n";
+        tvHasil6.setText(kelas);
 
-        return valid;
+        if (kelas.length() == startlen) kelas += "Anda belum memilih kelas" + "\n";
+
+
+
     }
 }

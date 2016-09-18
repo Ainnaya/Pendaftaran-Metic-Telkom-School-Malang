@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="JURUSAN">
+        <item>Web Design</item>
+        <item>Video Editing</item>
+        <item>Jaringan</item>
+        <item>Desktop</item>
+        <item>Design Grafis</item>
+    </string-array>
+</resources>

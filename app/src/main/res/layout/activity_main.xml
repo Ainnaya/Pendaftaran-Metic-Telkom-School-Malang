@@ -112,8 +112,9 @@
 
         <Spinner
             android:id="@+id/spinnerJurusan"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:entries="@array/JURUSAN" />
 
         <TextView
             android:id="@+id/textView4"
@@ -122,21 +123,21 @@
             android:text="KELAS" />
 
         <CheckBox
-            android:id="@+id/checkBox"
+            android:id="@+id/checkBoxPG"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:checked="false"
             android:text="Pagi (08.00 a.m - 10.00 a.m)" />
 
         <CheckBox
-            android:id="@+id/checkBox2"
+            android:id="@+id/checkBoxSG"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:checked="false"
             android:text="Siang (11.00 a.m - 01.00 p.m)" />
 
         <CheckBox
-            android:id="@+id/checkBox3"
+            android:id="@+id/checkBoxSR"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:checked="false"
@@ -152,13 +153,56 @@
         android:textColor="@android:color/white" />
 
     <TextView
-        android:id="@+id/textViewHasil"
+        android:id="@+id/textViewHasil1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="8dp"
         android:padding="16dp"
-        tools:text="Hasil" />
+        tools:text="" />
 
-</LinearLayout>
+        <TextView
+            android:id="@+id/textViewHasil2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="8dp"
+            android:padding="16dp"
+            tools:text="" />
+
+        <TextView
+            android:id="@+id/textViewHasil3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="8dp"
+            android:padding="16dp"
+            tools:text="" />
+
+        <TextView
+            android:id="@+id/textViewHasil4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="8dp"
+            android:padding="16dp"
+            tools:text="" />
+
+        <TextView
+            android:id="@+id/textViewHasil5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="8dp"
+            android:padding="16dp" />
+
+        <TextView
+            android:id="@+id/textViewHasil6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:padding="16dp"
+            tools:text="" />
+
+    </LinearLayout>
 </ScrollView>
