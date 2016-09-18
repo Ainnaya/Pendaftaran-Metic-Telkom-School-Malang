@@ -44,7 +44,6 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.buttonDaftar).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view)
-
             {
                 doClick();
             }
