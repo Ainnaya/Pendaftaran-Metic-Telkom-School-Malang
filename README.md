@@ -1,6 +1,6 @@
 # Pendaftaran-Metic-Telkom-School-Malang
 Formulir ini ditujukan untuk murid SMK Telkom Malang yang berminat mengikuti organisasi Metic.
-Formulir pendaftaran ini untuk mencari anggota baru organisasi Metic tahun ajaran 2016 - 2017 di SMK Telkom Malang.
+Formulir pendaftaran ini untuk **mencari anggota baru organisasi Metic tahun ajaran 2016 - 2017 di SMK Telkom Malang.**
 Data yang perlu diisi oleh pendaftar pada formulir ini yaitu antara lain User ID, Email, Nomor HP, Gender, Jurusan yang dipilih dan Kelas.
 Jika kamu ingin mendaftar, [Klik link disini](https://docs.google.com/uc?export=download&id=0BxRyC99DsxNVQlFnU3RzTzhPZlk) untuk mendapatkan aplikasinya.
 
